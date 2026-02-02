@@ -6,18 +6,18 @@
  *
  * @authors Paulo Padilla Domingues, Cristóbal Jesús Sarmiento Rodríguez, Marcos Llinares Montes.
  * @since 30 de Enero, 2026
- * @desc for-each.ts
- * This file demonstrates the use of for-each loops in TypeScript.
+ * @desc type-assertion.ts
+ * This file demonstrates the use of type assertions in TypeScript.
  * @see {@link https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors}
  * @see {@link https://www.npmjs.com/package/@types/readline-sync}
  */
 
 
-function forEachExample(): void {
-  let numbers: number[] = [1, 2, 3];
+function typeAssertionExample(): void {
+  let value: unknown = 'Hello TypeScript';
 
-  numbers.forEach((value) => {
-    console.log(value);
-  });
+  let length: number = (value as string).length;
+  console.log(length);
 }
-forEachExample();
+
+typeAssertionExample();

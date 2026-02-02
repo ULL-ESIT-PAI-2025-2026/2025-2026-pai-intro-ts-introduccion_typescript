@@ -6,18 +6,26 @@
  *
  * @authors Paulo Padilla Domingues, Cristóbal Jesús Sarmiento Rodríguez, Marcos Llinares Montes.
  * @since 30 de Enero, 2026
- * @desc for-each.ts
- * This file demonstrates the use of for-each loops in TypeScript.
+ * @desc optional-chaining-property.ts
+ * This file demonstrates the use of optional chaining in TypeScript.
  * @see {@link https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors}
  * @see {@link https://www.npmjs.com/package/@types/readline-sync}
  */
 
 
-function forEachExample(): void {
-  let numbers: number[] = [1, 2, 3];
+function optionalChainingExample(): void {
+  let user: {
+    name: string;
+    address?: {
+      city?: string;
+    };
+  } = {
+    name: 'Ana'
+  };
 
-  numbers.forEach((value) => {
-    console.log(value);
-  });
+  let city = user.address?.city;
+
+  console.log(city); // undefined, no error
 }
-forEachExample();
+
+optionalChainingExample();

@@ -14,7 +14,7 @@
 
 
 function forInExample(): void {
-  let user = { name: 'Ana', age: 25 };
+  let user = {name: 'Ana', age: 25};
 
   for (let key in user) {
     console.log(key, user[key as keyof typeof user]);

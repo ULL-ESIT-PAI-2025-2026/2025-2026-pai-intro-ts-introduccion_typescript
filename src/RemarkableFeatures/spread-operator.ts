@@ -6,18 +6,24 @@
  *
  * @authors Paulo Padilla Domingues, Cristóbal Jesús Sarmiento Rodríguez, Marcos Llinares Montes.
  * @since 30 de Enero, 2026
- * @desc for-each.ts
- * This file demonstrates the use of for-each loops in TypeScript.
+ * @desc spread-operator.ts
+ * This file demonstrates the use of the spread operator in TypeScript.
  * @see {@link https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors}
  * @see {@link https://www.npmjs.com/package/@types/readline-sync}
  */
 
 
-function forEachExample(): void {
-  let numbers: number[] = [1, 2, 3];
+function spreadOperatorExample(): void {
+  let numbers1: number[] = [1, 2];
+  let numbers2: number[] = [3, 4];
 
-  numbers.forEach((value) => {
-    console.log(value);
-  });
+  let combined = [...numbers1, ...numbers2];
+  console.log(combined);
+
+  let user = { name: 'Ana', age: 25 };
+  let copy = { ...user };
+
+  console.log(copy);
 }
-forEachExample();
+
+spreadOperatorExample();
