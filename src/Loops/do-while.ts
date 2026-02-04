@@ -15,12 +15,11 @@
 
 
 function doWhileExample(): void {
-  let i: number = 0;
-
+  let count: number = 0;
   do {
-    console.log(i);
-    i++;
-  } while (i < 3);
+    console.log(count);
+    count++;
+  } while (count < 3);
 }
 
 doWhileExample();

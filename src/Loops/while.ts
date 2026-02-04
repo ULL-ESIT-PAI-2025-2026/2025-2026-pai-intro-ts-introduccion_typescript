@@ -14,11 +14,11 @@
 
 
 function whileExample(): void {
-  let i: number = 0;
+  let count: number = 0;
 
-  while (i < 3) {
-    console.log(i);
-    i++;
+  while (count < 3) {
+    console.log(count);
+    count++;
   }
 }
 whileExample();

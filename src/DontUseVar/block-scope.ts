@@ -20,21 +20,21 @@
  * Demonstrates the function-scoped nature of 'var'.
  * Using 'var' can lead to unexpected behavior due to its lack of block scope.
  */
-function main(): void {
+function blockScopeInCorrect(): void {
   if (true) {
-    var x = 10;
+    var age = 18;
   }
-  // x is still accessible here
-  console.log(x); // 10
+  // Age is still accessible here
+  console.log(age); // 10
 }
 
 function blockScopeCorrect(): void {
   if (true) {
-    let x: number = 10;
+    let age: number = 18;
   }
 
-  console.log(x); // Error: x is not defined
+  console.log(age); // Error: Age is not defined
 }
 
-main();
+blockScopeInCorrect();
 blockScopeCorrect();

@@ -18,8 +18,8 @@
  * It declares variables of type string, number, and boolean, and prints them to the console.
  * @returns void
  */
-export function main(): void {
-  let myName: string = 'Cristóbal Jesús Sarmiento Rodríguez';
+function main(): void {
+  let myName: string = 'Cristóbal';
   let myAge: number = 22;
   let isStudent: boolean = true;
   console.log(`Name: ${myName}, Age: ${myAge}, Is Student: ${isStudent}`);
