@@ -6,7 +6,7 @@
  *
  * @authors Paulo Padilla Domingues, Cristóbal Jesús Sarmiento Rodríguez, Marcos Llinares Montes.
  * @since 30 de Enero, 2026
- * @desc union-types.ts
+ * @desc special-types.ts
  * This file demonstrates different special types in TypeScript.
  * @see {@link https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors}
  * @see {@link https://www.npmjs.com/package/@types/readline-sync}
@@ -14,21 +14,22 @@
 
 
 /**
- * @description Function that formats an ID which can be either a string or a number.
- * @param id - The ID to format, which can be a string or a number.
- * @returns A formatted string representation of the ID.
+ * @description Function that calculates a value based on whether the input is a string or a number.
+ * @param value - The value to calculate, which can be a string or a number.
+ * @returns A number that is either the length of the string or double the number.
  */
-function formatId(id: string | number): string {
-  if (typeof id === 'number') {
-    return `ID-${id.toString().padStart(4, '0')}`;
-  } else {
-    return id.toUpperCase();
+function calculate(value: string | number): number {
+  if (typeof value === 'string') {
+    return value.length;
   }
+  return (value * 2);
 }
 
+
 function main() {
-  console.log(formatId(23));      // ID-0023
-  console.log(formatId('ab-45')); // AB-45
+  //calculate(true); // Compile-time error
+  console.log(calculate('TypeScript')); // 10
+  console.log(calculate(5));            // 10
 }
 
 main();
