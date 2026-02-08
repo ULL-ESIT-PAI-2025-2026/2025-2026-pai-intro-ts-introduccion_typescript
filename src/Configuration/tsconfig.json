@@ -1,0 +1,53 @@
+ /**
+ * Universidad de La Laguna
+ * Escuela Superior de Ingeniería y Tecnología
+ * Grado en Ingeniería Informática
+ * Programación de Aplicaciones Interactivas 2025-2026
+ *
+ * @authors Paulo Padilla Domingues, Cristóbal Jesús Sarmiento Rodríguez, Marcos Llinares Montes.
+ * @since 30 de Enero, 2026
+ * @desc tsconfig.json - TypeScript configuration file for the project.
+ * A TypeScript configuration file (tsconfig.json) is a JSON file that specifies the root files
+ * and the compiler options required to compile a TypeScript project. It allows developers to define
+ * how the TypeScript compiler should process the code, including which files to include or exclude,
+ * and various settings for module resolution, target JavaScript version, and more.
+ * @see {@link https://www.typescriptlang.org/tsconfig/}
+ */
+ {
+  "display": "Configuration for Exercism TypeScript Exercises",
+  "compilerOptions": {
+    // Allows you to use the newest syntax, and have access to console.log
+    // https://www.typescriptlang.org/tsconfig#lib
+    "lib": ["ES2020", "dom"],
+    // Make sure typescript is configured to output ESM
+    // https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-make-my-typescript-project-output-esm
+    "module": "Node16",
+    // Since this project is using babel, TypeScript may target something very
+    // high, and babel will make sure it runs on your local Node version.
+    // https://babeljs.io/docs/en/
+    "target": "ES2020", // ESLint doesn't support this yet: "es2022",
+
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    // Because jest-resolve isn't like node resolve, the absolute path must be .ts
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+
+    // Because we'll be using babel: ensure that Babel can safely transpile
+    // files in the TypeScript project.
+    //
+    // https://babeljs.io/docs/en/babel-plugin-transform-typescript/#caveats
+    "isolatedModules": true
+  },
+  "include": [
+    "*.ts",
+    "*.tsx",
+    ".meta/*.ts",
+    ".meta/*.tsx",
+    "__typetests__/*.tst.ts"
+  ],
+  "exclude": ["node_modules"]
+}
