@@ -12,7 +12,9 @@
  * @see {@link https://www.npmjs.com/package/@types/readline-sync}
  */
 
-
+/**
+ * If-else example
+ */
 function elseIfExample(): void {
   let grade: number = 7;
 
