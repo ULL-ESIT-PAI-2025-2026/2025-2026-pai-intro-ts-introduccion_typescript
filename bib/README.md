@@ -9,3 +9,5 @@
 4. MDN Web Docs. (n.d.). JavaScript modules. Recuperado de https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules.
 
 5. Node.js Foundation. (n.d.). CommonJS Modules. Recuperado de https://nodejs.org/api/modules.html.
+
+6. Vanderkam, D. (n.d.). Effective TypeScript: Write Modern JavaScript. Recuperado de https://github.com/danvk/effective-typescript/blob/main/samples/ch-migrate/write-modern-js.md
