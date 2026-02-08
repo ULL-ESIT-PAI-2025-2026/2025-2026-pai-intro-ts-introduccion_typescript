@@ -28,6 +28,7 @@ function exampleSpecialTypes(): void {
   let valueUnknown: unknown = 'TypeScript';
   if (typeof valueUnknown === 'string') {
     console.log(valueUnknown.toUpperCase());
+    // Thats returns 'TYPESCRIPT'
   }
 
   // null and undefined
@@ -35,11 +36,15 @@ function exampleSpecialTypes(): void {
   let notDefined: undefined = undefined;
 
   console.log('Null value: ', empty);
+  // Thats returns 'Null value: null'
   console.log('Undefined value: ', notDefined);
+  // Thats returns 'Undefined value: undefined'
 
   // void
   function logMessage(message: string): void {
     console.log(message);
+    // Thats returns the message passed as an argument,
+    // but the function itself returns nothing.
   }
 
   logMessage('This function returns nothing');
@@ -47,10 +52,11 @@ function exampleSpecialTypes(): void {
   // never
   function throwError(message: string): never {
     throw new Error(message);
+    // This function always throws an error and never returns a value.
   }
 
   // Uncomment to test never
-  // throwError('Something went wrong');
+  throwError('Something went wrong');
 }
 
 exampleSpecialTypes();
