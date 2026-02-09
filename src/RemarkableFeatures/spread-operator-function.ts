@@ -6,7 +6,7 @@
  *
  * @authors Paulo Padilla Domingues, Cristóbal Jesús Sarmiento Rodríguez, Marcos Llinares Montes.
  * @since 30 de Enero, 2026
- * @desc spread-operator.ts
+ * @desc spread-operator-function.ts
  * This file demonstrates the use of the spread operator in TypeScript.
  * @see {@link https://www.typescriptlang.org/docs/handbook/2/classes.html#constructors}
  * @see {@link https://www.npmjs.com/package/@types/readline-sync}
@@ -15,21 +15,20 @@
 
 /**
  * This function demonstrates the use of the spread operator in TypeScript.
- * The spread operator allows you to expand elements of an iterable (like an array) or properties of an object into individual elements.
- * It can be used to combine arrays, copy objects, and more.
- * @returns void
+ * @param numbers - A variable number of numeric arguments to be summed.
+ * @returns The sum of the provided numbers.
  */
-function spreadOperatorExample(): void {
-  let numbers1: number[] = [1, 2];
-  let numbers2: number[] = [3, 4];
-
-  let combined = [...numbers1, ...numbers2];
-  console.log(combined);
-
-  let user = { name: 'Ana', age: 25 };
-  let copy = { ...user };
-
-  console.log(copy);
+function sumNumbers(...numbers: number[]): number {
+  let total: number = 0;
+  for (let number of numbers) {
+    total += number;
+  }
+  return total;
 }
 
-spreadOperatorExample();
+function enterPoint() {
+  console.log(sumNumbers(1, 2, 3));        // 6
+  console.log(sumNumbers(5, 10, 15, 20));  // 50
+}
+
+enterPoint();

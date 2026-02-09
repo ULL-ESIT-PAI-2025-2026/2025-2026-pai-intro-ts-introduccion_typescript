@@ -13,6 +13,13 @@
  */
 
 
+
+/**
+ * @description Function that demonstrates the use of optional chaining in TypeScript.
+ * Optional chaining allows you to safely access nested properties of an object without having to check if each level exists.
+ * If any part of the chain is null or undefined, the entire expression will return undefined instead of throwing an error.
+ * @returns void
+ **/
 function optionalChainingExample(): void {
   let user: {
     name: string;

@@ -13,6 +13,12 @@
  */
 
 
+/**
+ * @description Function that demonstrates the use of the nullish coalescing operator in TypeScript.
+ * The nullish coalescing operator (??) allows you to provide a default value when dealing with null or undefined.
+ * It returns the right-hand side operand when the left-hand side operand is null or undefined, otherwise it returns the left-hand side operand.
+ * @returns void
+ **/
 function nullishCoalescingExample(): void {
   let input: string | null = null;
 

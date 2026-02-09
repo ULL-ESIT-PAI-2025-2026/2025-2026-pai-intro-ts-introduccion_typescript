@@ -13,6 +13,12 @@
  */
 
 
+/**
+ * This function demonstrates the use of type assertions in TypeScript.
+ * Type assertions allow you to tell the compiler that you know the type of a value better than it does.
+ * This can be useful when you have information about the type that the compiler cannot infer on its own.
+ * @returns void
+ */
 function typeAssertionExample(): void {
   let value: unknown = 'Hello TypeScript';
 
