@@ -14,34 +14,46 @@
  * @see {@link https://www.typescriptlang.org/tsconfig/}
  */
  {
+  // A descriptive label that serves to quickly identify the purpose of this configuration within the project.
   "display": "Configuration for Exercism TypeScript Exercises",
   "compilerOptions": {
-    // Allows you to use the newest syntax, and have access to console.log
+    // Specifies which object and function libraries the editor knows about (such as browser objects or modern JS functions)
+    // so they don't throw errors when writing code.
     // https://www.typescriptlang.org/tsconfig#lib
     "lib": ["ES2020", "dom"],
-    // Make sure typescript is configured to output ESM
+    // Configures how imports and exports are managed between files, ensuring compatibility with the latest versions of Node.js.
     // https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c#how-can-i-make-my-typescript-project-output-esm
     "module": "Node16",
-    // Since this project is using babel, TypeScript may target something very
-    // high, and babel will make sure it runs on your local Node version.
+    // Defines the JavaScript version to which our code will be transformed; we choose a modern one
+    // to leverage current features like optional chaining.
     // https://babeljs.io/docs/en/
     "target": "ES2020", // ESLint doesn't support this yet: "es2022",
 
+    // This is "ultra-safe mode"; it enforces that everything is perfectly typed,
+    // prohibiting ambiguous behaviors that could cause errors in production.
     "strict": true,
+    // Acts as a compatibility bridge that allows importing old libraries (CommonJS)
+    // using modern TypeScript syntax without issues.
     "esModuleInterop": true,
+    // Instructs the compiler not to check the types of external libraries (node_modules),
+    // making the validation process much faster.
     "skipLibCheck": true,
+    // Ensures that if a file is named User.ts, you cannot import it as user.ts; this prevents
+    // serious errors when moving code between Windows, Mac, or Linux.
     "forceConsistentCasingInFileNames": true,
 
-    // Because jest-resolve isn't like node resolve, the absolute path must be .ts
+    // Allows explicitly writing the .ts extension in imports, which is necessary in certain modern runtime environments.
     "allowImportingTsExtensions": true,
+    // Tells TypeScript not to create .js output files; its only function here is to check that the code doesn't have logic errors.
     "noEmit": true,
 
-    // Because we'll be using babel: ensure that Babel can safely transpile
-    // files in the TypeScript project.
-    //
+    // Ensures that each file is independent and can be processed by other tools (like Babel or Vite)
+    // without depending on information from other files.
     // https://babeljs.io/docs/en/babel-plugin-transform-typescript/#caveats
     "isolatedModules": true
   },
+  // Defines the "scope of action" of the compiler; here we list the specific folders and files
+  // that we want TypeScript to watch and protect.
   "include": [
     "*.ts",
     "*.tsx",
@@ -49,5 +61,7 @@
     ".meta/*.tsx",
     "__typetests__/*.tst.ts"
   ],
+  // This is the compiler's blacklist; it serves to ignore heavy folders like node_modules
+  // and thus save memory and processing time.
   "exclude": ["node_modules"]
 }
